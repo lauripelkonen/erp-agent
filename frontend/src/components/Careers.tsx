@@ -86,7 +86,7 @@ const Careers: React.FC = () => {
           </div>
         </div>
 
-        {/* Open Positions */}
+        {/* Open Positions  */}
         <div className="mb-16">
           <h2 className="font-['Inter:Medium',_sans-serif] font-medium text-[32px] text-black tracking-[-1.28px] mb-8 text-center">
             Open Positions
