@@ -1,0 +1,423 @@
+/* ERP Agent One-Pager Styles - A4 Print Optimized */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Variables - Brand Colors */
+:root {
+  --primary-dark: #030213;
+  --gradient-start: #4d4d4d;
+  --gradient-end: #0a0a0a;
+  --accent-purple: rgba(38, 0, 255, 0.8);
+  --accent-purple-light: rgba(38, 0, 255, 0.1);
+  --background-start: #ededed;
+  --background-end: #ffffff;
+  --text-primary: #030213;
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --text-muted: rgba(0, 0, 0, 0.4);
+  --white: #ffffff;
+  --border-light: rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 11pt;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: linear-gradient(180deg, var(--background-start) 0%, var(--background-end) 100%);
+}
+
+/* A4 Page Container */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  max-height: 297mm;
+  margin: 0 auto;
+  padding: 8mm 12mm;
+  background: linear-gradient(180deg, var(--background-start) 0%, var(--background-end) 100%);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5mm;
+}
+
+.logo {
+  height: 28px;
+}
+
+.tagline {
+  font-size: 10pt;
+  font-weight: 500;
+  color: var(--accent-purple);
+  letter-spacing: -0.02em;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 5mm;
+}
+
+.hero-headline {
+  font-size: 22pt;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 3mm;
+  line-height: 1.2;
+}
+
+.hero-headline .highlight {
+  color: var(--accent-purple);
+}
+
+.hero-subtext {
+  font-size: 10pt;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Problem Section */
+.problem-section {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin-bottom: 4mm;
+  border: 1px solid var(--border-light);
+}
+
+.section-label {
+  font-size: 7pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 2mm;
+}
+
+.problem-title {
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2mm;
+}
+
+.problem-stats {
+  display: flex;
+  gap: 6mm;
+}
+
+.problem-stat {
+  display: flex;
+  align-items: flex-start;
+  gap: 2mm;
+}
+
+.problem-stat-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.problem-stat-text {
+  font-size: 9pt;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* How It Works */
+.how-it-works {
+  margin-bottom: 4mm;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  border: 1px solid var(--border-light);
+}
+
+.how-it-works-title {
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4mm;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 4mm;
+}
+
+.step {
+  flex: 1;
+  background: transparent;
+  border-radius: 8px;
+  padding: 2mm;
+  text-align: center;
+  position: relative;
+}
+
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -3mm;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid var(--accent-purple);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.step-number {
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 9pt;
+  font-weight: 600;
+  margin: 0 auto 2mm;
+}
+
+.step-title {
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1mm;
+}
+
+.step-desc {
+  font-size: 8pt;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+/* Benefits Grid */
+.benefits {
+  margin-bottom: 4mm;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  border: 1px solid var(--border-light);
+}
+
+.benefits-title {
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4mm;
+  text-align: center;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+}
+
+.benefit-card {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  padding: 3mm;
+}
+
+.benefit-metric {
+  font-size: 16pt;
+  font-weight: 700;
+  color: var(--accent-purple);
+  margin-bottom: 1mm;
+  letter-spacing: -0.02em;
+}
+
+.benefit-label {
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1mm;
+}
+
+.benefit-desc {
+  font-size: 7pt;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+/* Trust Section */
+.trust-section {
+  display: flex;
+  justify-content: center;
+  gap: 6mm;
+  margin-bottom: 4mm;
+  padding: 3mm 5mm;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+  font-size: 8pt;
+  color: var(--text-secondary);
+}
+
+.trust-icon {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-purple-light);
+  border-radius: 50%;
+  color: var(--accent-purple);
+  font-size: 10px;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  border-radius: 12px;
+  padding: 5mm;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 4mm;
+}
+
+.cta-title {
+  font-size: 12pt;
+  font-weight: 600;
+  margin-bottom: 2mm;
+}
+
+.cta-subtitle {
+  font-size: 9pt;
+  opacity: 0.8;
+  margin-bottom: 3mm;
+}
+
+.cta-contact {
+  display: flex;
+  justify-content: center;
+  gap: 8mm;
+  flex-wrap: wrap;
+}
+
+.cta-item {
+  font-size: 9pt;
+  font-weight: 500;
+}
+
+.cta-item a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2mm;
+  border-top: 1px solid var(--border-light);
+}
+
+.footer-logo {
+  height: 18px;
+  opacity: 0.6;
+}
+
+.footer-text {
+  font-size: 7pt;
+  color: var(--text-muted);
+}
+
+/* Icons (SVG inline) */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}
+
+/* Print Styles */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    margin: 0;
+    padding: 12mm 15mm;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cta-section {
+    background: linear-gradient(180deg, #4d4d4d 0%, #0a0a0a 100%) !important;
+  }
+
+  .step-number {
+    background: linear-gradient(180deg, #4d4d4d 0%, #0a0a0a 100%) !important;
+  }
+}
+
+/* Screen preview helper */
+@media screen {
+  body {
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  .page {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+}

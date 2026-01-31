@@ -1,0 +1,84 @@
+# Git files
+.git
+.gitignore
+.gitattributes
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+logs/
+*.log
+temp/
+tmp/
+*.tmp
+
+# Docker files
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# Documentation and non-essential files
+*.md
+docs/
+tests/
+.pytest_cache/
+
+# Terraform and infrastructure
+terraform/
+*.tfstate
+*.tfstate.backup
+.terraform/
+
+# AWS Lambda specific
+lambda/
+
+# Configuration that shouldn't be in container
+config/local/
+
+# Output and data directories (will be mounted as volumes)
+output/
+data/products.csv 

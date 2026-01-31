@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer Automation Agent - Strategic Value Framework</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: white;
+            color: #1a1a1a;
+            line-height: 1.3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .slide {
+            width: 1920px;
+            height: 1080px;
+            background: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 60px 100px;
+            box-shadow: 0 0 40px rgba(0,0,0,0.08);
+        }
+        
+        /* Header */
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .slide-number {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Title Section */
+        .title-section {
+            margin-bottom: 60px;
+        }
+        
+        .slide-title {
+            font-size: 48px;
+            font-weight: 300;
+            color: #1a1a1a;
+            letter-spacing: -2px;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+        
+        .slide-subtitle {
+            font-size: 20px;
+            font-weight: 400;
+            color: #4a4a4a;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+        }
+        
+        .value-proposition {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2600FF;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid #2600FF;
+            padding-left: 20px;
+        }
+        
+        /* Main Content Layout */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            flex-grow: 1;
+        }
+        
+        /* Left Side - Strategic Framework */
+        .framework-section {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .framework-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 50px;
+            letter-spacing: -1px;
+        }
+        
+        .strategic-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .pillar {
+            position: relative;
+            padding: 30px 0;
+        }
+        
+        .pillar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #2600FF;
+        }
+        
+        .pillar-category {
+            font-size: 12px;
+            font-weight: 700;
+            color: #2600FF;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+        
+        .pillar-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .pillar-description {
+            font-size: 16px;
+            font-weight: 400;
+            color: #4a4a4a;
+            line-height: 1.4;
+            letter-spacing: -0.2px;
+        }
+        
+        .pillar-metric {
+            font-size: 36px;
+            font-weight: 300;
+            color: #2600FF;
+            margin-top: 20px;
+            letter-spacing: -1px;
+        }
+        
+        /* Impact Statement */
+        .impact-statement {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-left: 6px solid #2600FF;
+            padding: 30px 40px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .impact-label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #2600FF;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+        
+        .impact-text {
+            font-size: 18px;
+            font-weight: 400;
+            color: #1a1a1a;
+            line-height: 1.4;
+            letter-spacing: -0.3px;
+        }
+        
+        /* Competitive Advantage Colors */
+        .pillar:nth-child(1)::before { background: #2600FF; }
+        .pillar:nth-child(2)::before { background: #00C851; }
+        .pillar:nth-child(3)::before { background: #FF6B35; }
+        .pillar:nth-child(4)::before { background: #AA66CC; }
+        .pillar:nth-child(5)::before { background: #FFD93D; }
+        .pillar:nth-child(6)::before { background: #4ECDC4; }
+        
+        .pillar:nth-child(1) .pillar-metric { color: #2600FF; }
+        .pillar:nth-child(2) .pillar-metric { color: #00C851; }
+        .pillar:nth-child(3) .pillar-metric { color: #FF6B35; }
+        .pillar:nth-child(4) .pillar-metric { color: #AA66CC; }
+        .pillar:nth-child(5) .pillar-metric { color: #FFD93D; }
+        .pillar:nth-child(6) .pillar-metric { color: #4ECDC4; }
+        
+        /* Source Attribution */
+        .source-note {
+            position: absolute;
+            bottom: 60px;
+            left: 100px;
+            font-size: 12px;
+            color: #999999;
+            font-weight: 400;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <!-- Header -->
+        <div class="slide-header">
+            <div style="font-size: 18px; font-weight: 600; color: #1a1a1a;">ERP Agent</div>
+            <div class="slide-number">04</div>
+        </div>
+
+        <!-- Title Section -->
+        <div class="title-section">
+            <h1 class="slide-title">Offer Automation Agent</h1>
+            <p class="slide-subtitle">Strategic value framework for sales transformation</p>
+            <div class="value-proposition">Competitive advantages driving measurable ROI</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content-layout">
+            <!-- Strategic Framework -->
+            <div class="framework-section">
+                <h2 class="framework-title">Six strategic advantages</h2>
+                
+                <div class="strategic-pillars">
+                    <!-- Competitive Edge -->
+                    <div class="pillar">
+                        <div class="pillar-category">Market Position</div>
+                        <h3 class="pillar-title">Competitive Edge</h3>
+                        <p class="pillar-description">10x faster quote generation creates immediate market advantage</p>
+                        <div class="pillar-metric">10x</div>
+                    </div>
+
+                    <!-- Zero Errors -->
+                    <div class="pillar">
+                        <div class="pillar-category">Quality</div>
+                        <h3 class="pillar-title">Zero Manual Errors</h3>
+                        <p class="pillar-description">Eliminate pricing mistakes and calculation errors</p>
+                        <div class="pillar-metric">100%</div>
+                    </div>
+
+                    <!-- Customer Experience -->
+                    <div class="pillar">
+                        <div class="pillar-category">Experience</div>
+                        <h3 class="pillar-title">Customer Satisfaction</h3>
+                        <p class="pillar-description">Professional quotes delivered in minutes, not hours</p>
+                        <div class="pillar-metric">2x</div>
+                    </div>
+
+                    <!-- Scalability -->
+                    <div class="pillar">
+                        <div class="pillar-category">Growth</div>
+                        <h3 class="pillar-title">Infinite Scalability</h3>
+                        <p class="pillar-description">Handle exponentially more quotes without cost increases</p>
+                        <div class="pillar-metric">∞</div>
+                    </div>
+
+                    <!-- Sales Morale -->
+                    <div class="pillar">
+                        <div class="pillar-category">Team</div>
+                        <h3 class="pillar-title">Higher Sales Morale</h3>
+                        <p class="pillar-description">Reps focus on relationships, not data entry</p>
+                        <div class="pillar-metric">60%</div>
+                    </div>
+
+                    <!-- Cost Savings -->
+                    <div class="pillar">
+                        <div class="pillar-category">Finance</div>
+                        <h3 class="pillar-title">Cost Savings</h3>
+                        <p class="pillar-description">Reduce processing costs and free up talent</p>
+                        <div class="pillar-metric">€50K+</div>
+                    </div>
+                </div>
+
+                <!-- Impact Statement -->
+                <div class="impact-statement">
+                    <div class="impact-label">Expected ROI: 300% within 12 months</div>
+                    <div class="impact-text">Companies implementing offer automation see 25-40% sales growth through improved speed, accuracy, and team focus</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Source -->
+        <div class="source-note">Source: ERP Agent client analysis, Q4 2024</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+# Virtual environments
+venv/
+.venv/
+SQL-Proxy-Function/.venv/
+env/
+.env.local
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+nul
+
+# Build files
+build/
+dist/
+*.egg-info/
+
+# Secrets and credentials
+*.pickle
+*.json.bak
+credentials.json
+token.json
+
+# Node modules (for frontend)
+node_modules/
+dashboard/frontend/node_modules/
+
+# Environment files
+.env
+
+# Output files
+output/
+*.html
+.env.development
+.env.production
+
+# Deployment files
+*.zip
+deployed_package.zip
+latest_deployed.zip
+check_final.zip
+
+# Windows specific
+SessionManagerPluginSetup.exe
+
+# Docker files
+docker-compose.yml
+task-definition-exec.json
+task-definition-exec_new_variables.json
+
+
+
+# Large ML/AI files
+*.npy
+*.embeddings
+*.model
+*.pkl
+*.pickle
+wabek_Lhinnasto062025.xlsx
+/old
+/not_needed

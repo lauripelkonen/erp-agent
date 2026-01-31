@@ -1,0 +1,18 @@
+{
+    "Comment": "Add Google site verification for Gmail setup",
+    "Changes": [
+        {
+            "Action": "CREATE",
+            "ResourceRecordSet": {
+                "Name": "erp-agent.com",
+                "Type": "TXT",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "\"google-site-verification=nR3azBOFak9xM-NU_uoOfpcLQ4qC9egL3L_u2YR-eGg\""
+                    }
+                ]
+            }
+        }
+    ]
+}

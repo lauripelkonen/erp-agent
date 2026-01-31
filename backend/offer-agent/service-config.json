@@ -1,0 +1,20 @@
+{
+  "cluster": "offer-automation-cluster",
+  "serviceName": "offer-automation-service",
+  "taskDefinition": "offer-automation",
+  "desiredCount": 1,
+  "launchType": "FARGATE",
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-xxxxxxxxx",
+        "subnet-xxxxxxx",
+        "subnet-xxxxxxx"
+      ],
+      "securityGroups": [
+        "sg-xxxxxxx"
+      ],
+      "assignPublicIp": "ENABLED"
+    }
+  }
+} 

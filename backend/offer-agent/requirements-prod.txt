@@ -1,0 +1,109 @@
+# Core web framework
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic>=2.10.3
+pydantic-settings
+
+# Google APIs
+google-auth==2.23.4
+google-auth-oauthlib==1.1.0
+google-auth-httplib2==0.1.1
+google-api-python-client==2.108.0
+google-cloud-pubsub==2.18.3
+google-genai
+
+openai
+# AI/ML - Only essential ones
+google-generativeai==0.3.2
+
+# Data processing - minimal
+python-multipart==0.0.6
+
+# HTTP client
+httpx
+aiohttp==3.9.1
+
+# Database (if needed)
+asyncpg==0.29.0
+sqlalchemy==2.0.23
+
+# Utilities
+structlog==23.2.0
+
+# AWS (if needed)
+boto3==1.34.0
+
+# Date handling
+python-dateutil==2.8.2
+
+# Email processing
+email-validator>=2.1.0
+
+# Redis for caching (if needed)
+redis>=5.0.0
+
+# Text processing (lightweight)
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.21.0
+
+# File I/O operations
+aiofiles==24.1.0
+
+# MQTT messaging
+aiomqtt==2.4.0
+
+# Email utilities
+emails==0.6
+
+# Template engine
+Jinja2==3.1.6
+
+# Database connectivity
+pyodbc==5.2.0
+
+# Vector database client
+qdrant_client==1.14.3
+
+# PDF generation
+reportlab==4.4.1
+
+
+#PDF EXTRACTION
+mistralai==1.9.10
+
+# Enhanced Notifications
+aiosmtplib>=3.0.1
+cryptography>=41.0.8
+
+# Date/Time handling
+pytz>=2023.3 
+
+
+openpyxl>=3.1.0
+
+# Logging and utilities
+colorama
+
+# Numerical computing for vector operations (semantic search)
+numpy>=1.24
+
+# PDF processing
+langchain-community
+pypdf
+
+# Email processing alternatives (instead of libratom)
+exchangelib  # For Exchange/Outlook email processing
+
+auto_mix_prep==0.2.0
+numpy==2.3.1
+pandas
+protobuf
+python-dotenv==1.1.1
+tenacity
+xlrd>=2.0.1  # For reading .xls Excel files
+odfpy>=1.4.1  # For reading .ods OpenDocument Spreadsheets
+
+# PDF processing
+PyPDF2
+pdf2image
+PyMuPDF>=1.24.0

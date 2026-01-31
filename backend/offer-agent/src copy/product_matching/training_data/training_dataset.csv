@@ -1,0 +1,2 @@
+customer_term,matched_product_code,matched_product_name,confidence_score,reasoning,match_type,timestamp,source_files
+"KOMPOSIITTIPUTKI 63x4,0 5m",1750006,KOMPOSIITTIPUTKI VALK 5M 63X6 TIGRIS PE-XC,0.8,"Type, diameter, and length (5m) match. Wall thickness differs (4.0 vs 6).",approximate,2025-09-02T21:33:23.136028,customer_example1.txt + offer_example1.txt

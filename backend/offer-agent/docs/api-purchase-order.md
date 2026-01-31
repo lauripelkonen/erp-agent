@@ -1,0 +1,501 @@
+get /api/purchaseorders
+Get a list of purchase orders
+
+Response Class (Status 200)
+OK
+
+ModelExample Value
+{}
+
+
+Response Content Type 
+application/json
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+filter.state	
+query	integer
+filter.customer_number	
+query	integer
+filter.type	
+query	integer
+filter.ordered_before	
+query	date-time
+filter.ordered_after	
+query	date-time
+filter.order_numbers	
+Provide multiple values in new lines.
+query	Array[integer]
+filter.updated_before	
+query	date-time
+filter.updated_after	
+query	date-time
+filter.only_allowed_types	
+query	boolean
+filter.skip_models	
+query	boolean
+filter.sort_desc	
+query	boolean
+filter.object_ids	
+Provide multiple values in new lines.
+query	Array[integer]
+filter.page	
+Page number. If not provided, using default value of 1
+
+query	integer
+filter.page_size	
+Page size. If not provided, using default value of 10
+
+query	integer
+filter.search	
+query	string
+
+
+
+
+
+
+
+
+
+
+
+post /api/purchaseorders
+Create new purchase order
+{
+  "currency_code": "string",
+  "delivery_date": "2025-07-04T15:39:48.525Z",
+  "delivery_info1": "string",
+  "delivery_info2": "string",
+  "delivery_method": 0,
+  "language_code": "string",
+  "rows": [
+    {
+      "delivered": 0,
+      "delivery_info1": "string",
+      "invoice_number": 0,
+      "jt": true,
+      "row_delivery_date": "2025-07-04T15:39:48.525Z",
+      "row_delivery_text": "string",
+      "row_reference": "string",
+      "row_salesrow_id": 0,
+      "row_total_delivery": 0,
+      "shelf": "string",
+      "to_be_delivered": 0,
+      "purchase_order_id": 0,
+      "row_product_batch_id": 0,
+      "stock_unit": "string",
+      "stock_inout_id": 0,
+      "row_sizes": [
+        {
+          "id": 0,
+          "row_id": 0,
+          "size": "string",
+          "ean": "string",
+          "amount": 0,
+          "dlvr_amount": 0,
+          "total_dlvr_amount": 0,
+          "sort_order": 0
+        }
+      ],
+      "serials": [
+        {
+          "row_id": 0,
+          "serialnr_code": "string",
+          "serialnr_description": "string",
+          "serialnr_product_code": "string"
+        }
+      ],
+      "batches": [
+        {
+          "batchnr_amount": 0,
+          "batchnr_best_before": "2025-07-04T15:39:48.525Z",
+          "batchnr_dimension": "string",
+          "batchnr_height": 0,
+          "batchnr_id": 0,
+          "batchnr_info1": "string",
+          "batchnr_info2": "string",
+          "batchnr_info3": "string",
+          "batchnr_info4": "string",
+          "batchnr_length": 0,
+          "batchnr_product_code": "string",
+          "batchnr_saldo": 0,
+          "batchnr_state": 0,
+          "batchnr_suppliercode": "string",
+          "batchnr_tmp_amount": 0,
+          "batchnr_width": 0,
+          "stock_transaction_id": 0,
+          "batchnr_stock_number": 0,
+          "batchnr_stock_shelf": "string",
+          "batchnr_pallet_id": 0,
+          "batchnr_inventory_tmp": 0,
+          "batchno_inventory_bit": true
+        }
+      ],
+      "shelfList": [
+        {
+          "id": 0,
+          "row_id": 0,
+          "shelf": "string",
+          "amount": 0
+        }
+      ],
+      "id": 0,
+      "type": 0,
+      "account": "string",
+      "cost_center": "string",
+      "project_code": "string",
+      "project_number": 0,
+      "project_phase_id": 0,
+      "discount": 0,
+      "discount2": 0,
+      "discount3": 0,
+      "per": 0,
+      "sales_price": 0,
+      "total": 0,
+      "unit_price": 0,
+      "quantity": 0,
+      "quantity2": 0,
+      "color": "string",
+      "customer_discount_percentage": 0,
+      "dimension": "string",
+      "inner_note": "string",
+      "net_price": 0,
+      "no_stock_update": true,
+      "note": "string",
+      "number": 0,
+      "position": "string",
+      "product_code": "string",
+      "product_name": "string",
+      "product_extra_name": "string",
+      "tax_amount": 0,
+      "tax_rate": 0,
+      "unit": "string",
+      "unit_net_price": 0,
+      "unit_net_price_currency": 0,
+      "unit_net_currency": "string",
+      "product_stock": 0,
+      "lta": "string",
+      "weight": 0,
+      "supplier_id": 0,
+      "row_serial": "string",
+      "is_serial_follow_up": true,
+      "serialnumber_type": 0,
+      "is_batch_follow_up": true,
+      "handedness": "string",
+      "price_info": "string"
+    }
+  ],
+  "payment_term": 0,
+  "person_buyer_number": 0,
+  "person_responsible_number": 0,
+  "currency_rate": 0,
+  "customer_address1": "string",
+  "customer_address2": "string",
+  "customer_address3": "string",
+  "customer_contact": "string",
+  "customer_country": "string",
+  "customer_name1": "string",
+  "customer_name2": "string",
+  "customer_number": 0,
+  "customer_reference": "string",
+  "purchase_order_date": "2025-07-04T15:39:48.525Z",
+  "delivery_code": "string",
+  "delivery_customer_address1": "string",
+  "delivery_customer_address2": "string",
+  "delivery_customer_address3": "string",
+  "delivery_customer_contact": "string",
+  "delivery_customer_country": "string",
+  "delivery_customer_name1": "string",
+  "delivery_customer_name2": "string",
+  "delivery_customer_number": 0,
+  "delivery_term": 0,
+  "delivery_term_info": "string",
+  "delivery_text": "string",
+  "deliverynotes": "string",
+  "description": "string",
+  "note": "string",
+  "order_number": 0,
+  "ordered_bit": true,
+  "ordermark": "string",
+  "our_reference": "string",
+  "pricefactor": 0,
+  "project_number": 0,
+  "state": 0,
+  "taxtype_bit": true,
+  "totalsum": 0,
+  "type": 0,
+  "purchase_order_id": 0,
+  "delivery_info": {
+    "id": 0,
+    "packages": 0,
+    "weight": 0,
+    "m2": 0,
+    "m3": 0,
+    "pallets": 0,
+    "delivery_method": 0,
+    "description": "string",
+    "consignment": "string",
+    "departure": "string",
+    "deliveryinfo_date": "2025-07-04T15:39:48.525Z",
+    "instructions": "string",
+    "forwarder": "string",
+    "info1": "string",
+    "info2": "string",
+    "destination": "string",
+    "package_type": "string",
+    "can_invoice_date": "2025-07-04T15:39:48.525Z"
+  },
+  "online_url": "string",
+  "driver": 0,
+  "driver_info": {
+    "id": 0,
+    "code": 0,
+    "description": "string",
+    "phone": "string"
+  },
+  "links": [
+    {
+      "id": 0,
+      "application_id": 0,
+      "object_id": 0,
+      "target": "string",
+      "description": "string",
+      "type": "string",
+      "codelist_type": 0
+    }
+  ]
+}
+
+
+
+
+
+put /api/purchaseorders
+Update purchase order
+{
+  "currency_code": "string",
+  "delivery_date": "2025-07-04T15:39:48.540Z",
+  "delivery_info1": "string",
+  "delivery_info2": "string",
+  "delivery_method": 0,
+  "language_code": "string",
+  "rows": [
+    {
+      "delivered": 0,
+      "delivery_info1": "string",
+      "invoice_number": 0,
+      "jt": true,
+      "row_delivery_date": "2025-07-04T15:39:48.540Z",
+      "row_delivery_text": "string",
+      "row_reference": "string",
+      "row_salesrow_id": 0,
+      "row_total_delivery": 0,
+      "shelf": "string",
+      "to_be_delivered": 0,
+      "purchase_order_id": 0,
+      "row_product_batch_id": 0,
+      "stock_unit": "string",
+      "stock_inout_id": 0,
+      "row_sizes": [
+        {
+          "id": 0,
+          "row_id": 0,
+          "size": "string",
+          "ean": "string",
+          "amount": 0,
+          "dlvr_amount": 0,
+          "total_dlvr_amount": 0,
+          "sort_order": 0
+        }
+      ],
+      "serials": [
+        {
+          "row_id": 0,
+          "serialnr_code": "string",
+          "serialnr_description": "string",
+          "serialnr_product_code": "string"
+        }
+      ],
+      "batches": [
+        {
+          "batchnr_amount": 0,
+          "batchnr_best_before": "2025-07-04T15:39:48.540Z",
+          "batchnr_dimension": "string",
+          "batchnr_height": 0,
+          "batchnr_id": 0,
+          "batchnr_info1": "string",
+          "batchnr_info2": "string",
+          "batchnr_info3": "string",
+          "batchnr_info4": "string",
+          "batchnr_length": 0,
+          "batchnr_product_code": "string",
+          "batchnr_saldo": 0,
+          "batchnr_state": 0,
+          "batchnr_suppliercode": "string",
+          "batchnr_tmp_amount": 0,
+          "batchnr_width": 0,
+          "stock_transaction_id": 0,
+          "batchnr_stock_number": 0,
+          "batchnr_stock_shelf": "string",
+          "batchnr_pallet_id": 0,
+          "batchnr_inventory_tmp": 0,
+          "batchno_inventory_bit": true
+        }
+      ],
+      "shelfList": [
+        {
+          "id": 0,
+          "row_id": 0,
+          "shelf": "string",
+          "amount": 0
+        }
+      ],
+      "id": 0,
+      "type": 0,
+      "account": "string",
+      "cost_center": "string",
+      "project_code": "string",
+      "project_number": 0,
+      "project_phase_id": 0,
+      "discount": 0,
+      "discount2": 0,
+      "discount3": 0,
+      "per": 0,
+      "sales_price": 0,
+      "total": 0,
+      "unit_price": 0,
+      "quantity": 0,
+      "quantity2": 0,
+      "color": "string",
+      "customer_discount_percentage": 0,
+      "dimension": "string",
+      "inner_note": "string",
+      "net_price": 0,
+      "no_stock_update": true,
+      "note": "string",
+      "number": 0,
+      "position": "string",
+      "product_code": "string",
+      "product_name": "string",
+      "product_extra_name": "string",
+      "tax_amount": 0,
+      "tax_rate": 0,
+      "unit": "string",
+      "unit_net_price": 0,
+      "unit_net_price_currency": 0,
+      "unit_net_currency": "string",
+      "product_stock": 0,
+      "lta": "string",
+      "weight": 0,
+      "supplier_id": 0,
+      "row_serial": "string",
+      "is_serial_follow_up": true,
+      "serialnumber_type": 0,
+      "is_batch_follow_up": true,
+      "handedness": "string",
+      "price_info": "string"
+    }
+  ],
+  "payment_term": 0,
+  "person_buyer_number": 0,
+  "person_responsible_number": 0,
+  "currency_rate": 0,
+  "customer_address1": "string",
+  "customer_address2": "string",
+  "customer_address3": "string",
+  "customer_contact": "string",
+  "customer_country": "string",
+  "customer_name1": "string",
+  "customer_name2": "string",
+  "customer_number": 0,
+  "customer_reference": "string",
+  "purchase_order_date": "2025-07-04T15:39:48.540Z",
+  "delivery_code": "string",
+  "delivery_customer_address1": "string",
+  "delivery_customer_address2": "string",
+  "delivery_customer_address3": "string",
+  "delivery_customer_contact": "string",
+  "delivery_customer_country": "string",
+  "delivery_customer_name1": "string",
+  "delivery_customer_name2": "string",
+  "delivery_customer_number": 0,
+  "delivery_term": 0,
+  "delivery_term_info": "string",
+  "delivery_text": "string",
+  "deliverynotes": "string",
+  "description": "string",
+  "note": "string",
+  "order_number": 0,
+  "ordered_bit": true,
+  "ordermark": "string",
+  "our_reference": "string",
+  "pricefactor": 0,
+  "project_number": 0,
+  "state": 0,
+  "taxtype_bit": true,
+  "totalsum": 0,
+  "type": 0,
+  "purchase_order_id": 0,
+  "delivery_info": {
+    "id": 0,
+    "packages": 0,
+    "weight": 0,
+    "m2": 0,
+    "m3": 0,
+    "pallets": 0,
+    "delivery_method": 0,
+    "description": "string",
+    "consignment": "string",
+    "departure": "string",
+    "deliveryinfo_date": "2025-07-04T15:39:48.540Z",
+    "instructions": "string",
+    "forwarder": "string",
+    "info1": "string",
+    "info2": "string",
+    "destination": "string",
+    "package_type": "string",
+    "can_invoice_date": "2025-07-04T15:39:48.540Z"
+  },
+  "online_url": "string",
+  "driver": 0,
+  "driver_info": {
+    "id": 0,
+    "code": 0,
+    "description": "string",
+    "phone": "string"
+  },
+  "links": [
+    {
+      "id": 0,
+      "application_id": 0,
+      "object_id": 0,
+      "target": "string",
+      "description": "string",
+      "type": "string",
+      "codelist_type": 0
+    }
+  ]
+}
+
+
+
+
+get /api/purchaseorders/{orderNumber}
+Get single purchase order
+
+Response Class (Status 200)
+OK
+
+ModelExample Value
+{}
+
+
+Response Content Type 
+application/json
+Parameters
+Parameter	Value	Description	Parameter Type	Data Type
+orderNumber	
+(required)
+PurchaseOrder number
+
+path	integer

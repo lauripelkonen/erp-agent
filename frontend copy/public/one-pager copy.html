@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Agent - Lemonsoft Automation Solution</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(180deg, #ededed 0%, #ffffff 100%);
+            color: #000;
+            line-height: 1.5;
+        }
+        
+        .container {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            height: 32px;
+        }
+        
+        .contact-info {
+            text-align: right;
+            font-size: 12px;
+            color: rgba(0,0,0,0.6);
+            font-weight: 500;
+            letter-spacing: -0.24px;
+        }
+        
+        .title {
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: -1.28px;
+            line-height: 1.1;
+            margin-bottom: 8px;
+            color: #000;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            color: rgba(0,0,0,0.6);
+            letter-spacing: -0.64px;
+            margin-bottom: 24px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 24px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.8px;
+            color: #000;
+            margin-bottom: 12px;
+        }
+        
+        .case-study {
+            background: linear-gradient(135deg, rgba(38,0,255,0.05) 0%, rgba(38,0,255,0.02) 100%);
+            border: 1px solid rgba(38,0,255,0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .case-study-title {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: -0.72px;
+            color: #2600FF;
+            margin-bottom: 12px;
+        }
+        
+        .case-study-content {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(0,0,0,0.7);
+            letter-spacing: -0.56px;
+            line-height: 1.4;
+        }
+        
+        .roi-box {
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .roi-title {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.64px;
+            color: #000;
+            margin-bottom: 12px;
+        }
+        
+        .metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .metric-label {
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(0,0,0,0.6);
+            letter-spacing: -0.52px;
+        }
+        
+        .metric-value {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2600FF;
+            letter-spacing: -0.56px;
+        }
+        
+        .savings-highlight {
+            background: linear-gradient(135deg, #2600FF 0%, rgba(38,0,255,0.8) 100%);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 16px 0;
+        }
+        
+        .savings-amount {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.96px;
+            margin-bottom: 4px;
+        }
+        
+        .savings-description {
+            font-size: 12px;
+            font-weight: 500;
+            opacity: 0.9;
+            letter-spacing: -0.48px;
+        }
+        
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            padding: 12px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+        
+        .timeline-step {
+            width: 24px;
+            height: 24px;
+            background: #2600FF;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 0 auto 8px;
+        }
+        
+        .timeline-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #000;
+            letter-spacing: -0.48px;
+            margin-bottom: 4px;
+        }
+        
+        .timeline-desc {
+            font-size: 10px;
+            font-weight: 500;
+            color: rgba(0,0,0,0.6);
+            letter-spacing: -0.4px;
+            line-height: 1.3;
+        }
+        
+        .guarantee-box {
+            background: linear-gradient(135deg, rgba(0,255,0,0.05) 0%, rgba(0,255,0,0.02) 100%);
+            border: 1px solid rgba(0,255,0,0.2);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        
+        .guarantee-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #00AA00;
+            letter-spacing: -0.56px;
+            margin-bottom: 6px;
+        }
+        
+        .guarantee-text {
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(0,0,0,0.7);
+            letter-spacing: -0.48px;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        
+        .pricing-item {
+            background: rgba(255,255,255,0.9);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 12px;
+            padding: 14px;
+        }
+        
+        .pricing-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: rgba(0,0,0,0.6);
+            letter-spacing: -0.44px;
+            margin-bottom: 4px;
+        }
+        
+        .pricing-value {
+            font-size: 16px;
+            font-weight: 600;
+            color: #000;
+            letter-spacing: -0.64px;
+        }
+        
+        .footer {
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 16px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #4d4d4d 0%, #0a0a0a 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: -0.52px;
+            display: inline-block;
+        }
+        
+        .urgency-text {
+            font-size: 11px;
+            font-weight: 500;
+            color: #FF4444;
+            letter-spacing: -0.44px;
+            text-align: right;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+        
+        .feature-list li {
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba(0,0,0,0.7);
+            letter-spacing: -0.52px;
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 16px;
+        }
+        
+        .feature-list li::before {
+            content: "•";
+            color: #2600FF;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+        
+        @media print {
+            body { background: white; }
+            .container { box-shadow: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="/e-logo.png" alt="ERP Agent" class="logo">
+            <div class="contact-info">
+                <div><strong>Lauri Pelkonen</strong> - Founder & CEO</div>
+                <div>📧 lauri@erp-agent.com | 🌐 erp-agent.com</div>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="title">Transform Your Lemonsoft Operations with AI Automation</h1>
+        <p class="subtitle">Custom-built AI agents that work inside your existing ERP system to eliminate manual processes</p>
+
+        <!-- Main Content Grid -->
+        <div class="main-content">
+            <!-- Left Column -->
+            <div>
+                <!-- Case Study -->
+                <div class="case-study">
+                    <h3 class="case-study-title">Proven Results: LVI-WaBeK Success Story</h3>
+                    <div class="case-study-content">
+                        <p><strong>Challenge:</strong> Leading building materials distributor managing 2000+ suppliers with manual processes eating 60+ hours weekly.</p>
+                        <br>
+                        <p><strong>Solution:</strong> ERP Agent's intelligent automation across procurement, sales, and warehouse operations.</p>
+                        <br>
+                        <p><strong>Results:</strong></p>
+                        <ul class="feature-list" style="margin-top: 8px;">
+                            <li>20,000+ hours saved annually</li>
+                            <li>Purchase orders: 12+ hours daily → 30 minutes</li>
+                            <li>Quote generation: Hours → minutes</li>
+                            <li>Stockouts reduced by 45%</li>
+                            <li>Zero manual errors in ordering</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ROI Calculator -->
+                <div class="roi-box">
+                    <h3 class="roi-title">Your Estimated ROI (Typical Lemonsoft Wholesaler)</h3>
+                    <div class="metric">
+                        <span class="metric-label">Purchasing time savings</span>
+                        <span class="metric-value">€35,000/year</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Sales efficiency gains</span>
+                        <span class="metric-value">€50,000/year</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Reduced errors & better terms</span>
+                        <span class="metric-value">€20,000/year</span>
+                    </div>
+                    <div class="savings-highlight">
+                        <div class="savings-amount">€105,000</div>
+                        <div class="savings-description">Total Annual Benefit</div>
+                    </div>
+                    <div class="metric" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 8px;">
+                        <span class="metric-label">Your investment (Year 1)</span>
+                        <span class="metric-value">€45,000</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label"><strong>Your net profit</strong></span>
+                        <span class="metric-value"><strong>€60,000+</strong></span>
+                    </div>
+                </div>
+
+                <!-- Guarantee -->
+                <div class="guarantee-box">
+                    <h4 class="guarantee-title">✓ 90-Day Success Guarantee</h4>
+                    <p class="guarantee-text">Minimum 40% efficiency improvement or full refund. We've never had a customer request this.</p>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div>
+                <!-- Implementation Timeline -->
+                <h3 class="section-title">90-Day Implementation Timeline</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-step">1</div>
+                        <div class="timeline-title">Setup & Integration</div>
+                        <div class="timeline-desc">Lemonsoft API connection, business rules mapping, team training</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-step">2</div>
+                        <div class="timeline-title">Pilot Deployment</div>
+                        <div class="timeline-desc">Limited scope testing, performance monitoring, rule refinement</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-step">3</div>
+                        <div class="timeline-title">Full Automation</div>
+                        <div class="timeline-desc">Complete rollout, success metrics achieved, ROI validated</div>
+                    </div>
+                </div>
+
+                <!-- What's Included -->
+                <div class="roi-box">
+                    <h3 class="roi-title">Pilot Program Includes</h3>
+                    <ul class="feature-list">
+                        <li>Full Lemonsoft integration & API development</li>
+                        <li>Custom business logic programming (2-3 weeks)</li>
+                        <li>Your choice: Purchase Orders, Sales Quotes, or Transfers</li>
+                        <li>5M LLM tokens monthly (€100 value)</li>
+                        <li>Complete team training & documentation</li>
+                        <li>Ongoing support & optimization</li>
+                        <li>90-day success guarantee</li>
+                    </ul>
+                </div>
+
+                <!-- Token Usage -->
+                <div class="roi-box">
+                    <h3 class="roi-title">AI Token Usage (Your Operation Size)</h3>
+                    <div class="metric">
+                        <span class="metric-label">Purchase orders (monthly)</span>
+                        <span class="metric-value">2M - 3M tokens</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Sales quotes (monthly)</span>
+                        <span class="metric-value">1.5M - 2M tokens</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-label">Transfers & analytics</span>
+                        <span class="metric-value">0.5M - 1M tokens</span>
+                    </div>
+                    <p style="font-size: 11px; color: rgba(0,0,0,0.6); margin-top: 8px; letter-spacing: -0.44px;">5M monthly allowance covers typical operations. Overage: €0.00003/token</p>
+                </div>
+
+                <!-- Pricing -->
+                <h3 class="section-title">Investment Structure</h3>
+                <div class="pricing-grid">
+                    <div class="pricing-item">
+                        <div class="pricing-label">One-time Setup Fee</div>
+                        <div class="pricing-value">€15,000</div>
+                    </div>
+                    <div class="pricing-item">
+                        <div class="pricing-label">Monthly Subscription</div>
+                        <div class="pricing-value">€2,500</div>
+                    </div>
+                </div>
+                <p style="font-size: 11px; color: rgba(0,0,0,0.6); margin: 8px 0; letter-spacing: -0.44px;">Setup fee covers 2-3 weeks custom development. Monthly fee includes hosting, support, and token allowance.</p>
+            </div>
+        </div>
+
+        <!-- Footer CTA -->
+        <div class="footer">
+            <div>
+                <a href="mailto:lauri@erp-agent.com" class="cta-box">Schedule 15-Minute Demo</a>
+                <p style="font-size: 11px; color: rgba(0,0,0,0.6); margin-top: 6px; letter-spacing: -0.44px;">Response within 2 hours guaranteed</p>
+            </div>
+            <div class="urgency-text">
+                <div><strong>Limited Pilot Program</strong></div>
+                <div>Only 7 of 50 spots remaining</div>
+                <div>Exclusive territory protection</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

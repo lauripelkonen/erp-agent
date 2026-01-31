@@ -1,0 +1,12 @@
+customer_number;name;street;postal_code;city;country;contact_person;email;phone;credit_allowed;responsible_person_number;responsible_person_name
+1;Metallisorvaamo M. Hakala Oy;Juholankatu 3;45130;KOUVOLA;Finland;Janne Vainio;janne.vainio@mhakala.fi;+358 40 556 36;TRUE;1;Marjatta Jarner
+2;Kimet Oy;Ilvesvuorenkatu 4;01900;NURMIJÄRVI;Finland;Marjatta Jarner;marjatta.jarner@kimet.fi;09-2746230;TRUE;1;Marjatta Jarner
+3;Levy- ja Teräsrakenne HORSMALAHTI Oy;Teollisuustie 10;37600;VALKEAKOSKI;Finland;Juha Nyrhinen;juha.nyrhinen@horsmalahti.fi;040 5733858;TRUE;1;Marjatta Jarner
+4;Pohjolan Yhtyneet Metallintuojat Oy;Hankikuja 4;01390;Vantaa;Finland;Sami Pekkinen;sami.pekkinen@pymt.fi;+358 44 2932617;TRUE;2;Vesa Jolkkonen
+5;Suomen Vesileikkaus Oy;Yritystie 1;42700;Keuruu;Finland;Esa Eklund;esa.eklund@suomenvesileikkaus.fi;+358 40 770 0472;TRUE;3;Tuija Ruoppa
+6;Timeka Oy;Pajatie 3;23100;Mynämäki;Finland;Niko Setälä;niko.setala@timeka.fi;+358 40 537 3971;TRUE;3;Tuija Ruoppa
+7;PTH Oy;Veckjärventie 1;06150;Porvoo;Finland;Taina Tai;taina.tai@pth.fi;+358 40 711 9796;TRUE;2;Vesa Jolkkonen
+8;Helapala Oy;;;;Finland;Walter Aaltonen;info@helapala.fi;;TRUE;3;Tuija Ruoppa
+9;UMP Maastohitsaus Oy;Akkutie 13;07700;Helsinki;Finland;Joonas Kontiainen;;050 526 1864;TRUE;1;Harri Rosendahl
+10;Lohjan Hitsauspalvelu Oy;;;;Finland;Mika Järvenpää;;;TRUE;1;Harri Rosendahl
+11;ERP AGENT Oy;Kluuvikatu 1;00100;HELSINKI;Finland;Lauri Pelkonen;lauri@erp-agent.com;;TRUE;1;Harri Rosendahl

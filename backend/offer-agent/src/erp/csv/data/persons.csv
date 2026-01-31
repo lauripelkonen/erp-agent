@@ -1,0 +1,17 @@
+number;name;email;phone;role;active
+1;Marjatta Jarner;marjatta.jarner@kimet.fi;09-2746230;Sales Manager;TRUE
+2;Vesa Jolkkonen;vesa.jolkkonen@kimet.fi;;Sales Representative;TRUE
+3;Tuija Ruoppa;tuija.ruoppa@kimet.fi;+358 40 731 01 71;Sales Representative;TRUE
+4;Oliver Sten;oliver.sten@kimet.fi;;Sales Representative;TRUE
+5;Harri Rosendahl;harri.rosendahl@kimet.fi;;Sales Manager;TRUE
+6;Tiina Töyrylä;;;Contact;TRUE
+7;Janne Vainio;janne.vainio@mhakala.fi;+358 40 556 36;Contact;TRUE
+8;Juha Nyrhinen;juha.nyrhinen@horsmalahti.fi;040 5733858;Contact;TRUE
+9;Sami Pekkinen;sami.pekkinen@pymt.fi;+358 44 2932617;Contact;TRUE
+10;Esa Eklund;esa.eklund@suomenvesileikkaus.fi;+358 40 770 0472;Sales;TRUE
+11;Niko Setälä;niko.setala@timeka.fi;+358 40 537 3971;Production Manager;TRUE
+12;Taina Tai;taina.tai@pth.fi;+358 40 711 9796;Contact;TRUE
+13;Walter Aaltonen;info@helapala.fi;;Contact;TRUE
+14;Joonas Kontiainen;;050 526 1864;Contact;TRUE
+15;Mika Järvenpää;;;Contact;TRUE
+16;Ihar Burkut;;;Contact;TRUE

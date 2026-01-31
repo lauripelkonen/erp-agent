@@ -1,0 +1,18 @@
+{
+    "Comment": "Add Gmail MX record for custom email",
+    "Changes": [
+        {
+            "Action": "CREATE",
+            "ResourceRecordSet": {
+                "Name": "erp-agent.com",
+                "Type": "MX",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "1 SMTP.GOOGLE.COM"
+                    }
+                ]
+            }
+        }
+    ]
+}

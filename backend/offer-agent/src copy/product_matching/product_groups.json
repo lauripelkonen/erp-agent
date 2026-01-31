@@ -1,0 +1,48 @@
+[
+  {
+    "id": 101,
+    "name": "Vesi-, lämpö-, kaasu- ja kylmäputket",
+    "subgroups": [
+      {
+        "id": 101010,
+        "name": "Kapillaariosat"
+      },
+      {
+        "id": 101011,
+        "name": "Kapillaariosat (projektituotteet)"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Mittaus, varaajat, venttiilit, pumput ja putkistov",
+    "subgroups": [
+      {
+        "id": 102010,
+        "name": "Puserrusliittimet"
+      },
+      {
+        "id": 102011,
+        "name": "Puserrusliittimet (projektituotteet)"
+      },
+      {
+        "id": 102020,
+        "name": "Messinkiliittimet kierre"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Asennusletkut, kalustussulut ja tarvikkeet",
+    "subgroups": [
+      {
+        "id": 103400,
+        "name": "Kromatut ja valkoiset Ht-osat ja putket"
+      },
+      {
+        "id": 103900,
+        "name": "Kalustustarvikkeet"
+      }
+    ]
+  }
+]

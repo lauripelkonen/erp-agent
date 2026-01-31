@@ -1,0 +1,55 @@
+MagiCAD V&P - Bill of materials								
+								
+Project: Projektinimi_projektinumero								
+Date: 06.11.2025								
+Range: 								
+								
+Class	Size	Series	Product	N	L\[m]	Insul.\A	s\[mm]	Surface\area
+Duct	100	Pyöreä	BDEK-1-010		   3.6			1.1 m²
+Duct	125	Pyöreä	BDEK-1-012		  34.0			13.3 m²
+Duct	160	Pyöreä	BDEK-1-016		  19.1			9.6 m²
+Duct	200	Pyöreä	BDEK-1-020		   8.5			5.3 m²
+Duct	315	Pyöreä	BDEK-1-031		   0.1			0.1 m²
+Bend-30	125	Pyöreä	BDEB-30-012	1				0 m²
+Bend-30	200	Pyöreä	BDEB-30-020	1				0.1 m²
+Bend-45	100	Pyöreä	BDEB-45-010	4				0.1 m²
+Bend-45	125	Pyöreä	BDEB-45-012	2				0.1 m²
+Bend-45	200	Pyöreä	BDEB-45-020	2				0.2 m²
+Bend-90	100	Pyöreä	BDEB-90-010	1				0.1 m²
+Bend-90	125	Pyöreä	BDEB-90-012	6				0.6 m²
+Bend-90	160	Pyöreä	BDEB-90-016	2				0.3 m²
+Bend-90	200	Pyöreä	BDEB-90-020	8				2 m²
+Outlet	125/100	Pyöreä		5				0.3 m²
+Outlet	125/125	Pyöreä		5				0.3 m²
+Outlet	160/125	Pyöreä		6				0.5 m²
+Outlet	160/160	Pyöreä		1				0.1 m²
+Outlet	200/125	Pyöreä		1				0.1 m²
+Reducer/Expander	125/100	Pyöreä		1				0 m²
+Reducer/Expander	160/125	Pyöreä		2				0 m²
+Reducer/Expander	200/160	Pyöreä		2				0 m²
+Reducer/Expander	315/200	Pyöreä		1				0.1 m²
+Plug	125	Pyöreä	BDEG-1-012	2				
+Outdoor air device	315	YGC	YGC-315	1				
+Supply air device	125	KTS	KTS-125-0-C	6				
+Supply air device	100	STQA	STQA-100	1				
+Supply air device	125	STQA	STQA-125	2				
+Extract air device	100	KSO	KSO-100-C	4				
+Extract air device	125	KSO	KSO-125-C	4				
+Extract air device	100	KSU	KSU 100	1				
+Exhaust air device	200	UPA	UPA-200	1				
+Flow damper	125	FG	BDEP-43-012-230	1				0.1 m²
+Flow damper	160	FG	BDEP-43-016-230	1				0.1 m²
+Silencer	200	KVDPX	KVDPX-200-1000-1	2				1.3 m²
+Fire damper	160	F-R60	F-R60K-160-B()	1				0.1 m²
+Fire damper	200	F-R60	F-R60K-200-B()	2				0.1 m²
+Box	630x185x100			4				
+Box	630x225x100			2				
+Access panel	125	PL5	Cleaning cover-012-circ plug	3				
+Access panel	160	PL5	Cleaning cover-016-circ plug	1				
+Access panel	125	PL6	Cleaning cover-012-duct part	1				
+Access panel	200	PL6	Cleaning cover-020-duct part	2				
+Insulation/Duct	200	L19	Solukumi 19mm		   3.6	2.7 m²	19	2.3 m²
+Insulation/Duct	315	L19	Solukumi 19mm		   0.1	0.1 m²	19	0.1 m²
+Insulation/Bend-30	200	L19	Solukumi 19mm	1			19	0.1 m²
+Insulation/Bend-90	200	L19	Solukumi 19mm	4			19	1 m²
+Insulation/Reducer/Expander	315/200	L19	Solukumi 19mm	1			19	0.1 m²

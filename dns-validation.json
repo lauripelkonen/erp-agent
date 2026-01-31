@@ -1,0 +1,31 @@
+{
+    "Comment": "Add SSL validation records",
+    "Changes": [
+        {
+            "Action": "CREATE",
+            "ResourceRecordSet": {
+                "Name": "_57b781a8699f69b3608a8d31b9abbd64.erp-agent.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "_fe164d61af41847c7a6bb296bf1ca8ed.xlfgrmvvlj.acm-validations.aws."
+                    }
+                ]
+            }
+        },
+        {
+            "Action": "CREATE",
+            "ResourceRecordSet": {
+                "Name": "_bd1833b4e9c9200e9f3a3be009f85ca5.www.erp-agent.com",
+                "Type": "CNAME",
+                "TTL": 300,
+                "ResourceRecords": [
+                    {
+                        "Value": "_8efa22e3e3b67e638dab79fe1395fe84.xlfgrmvvlj.acm-validations.aws."
+                    }
+                ]
+            }
+        }
+    ]
+}
