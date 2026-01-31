@@ -6,12 +6,14 @@ import HowItWorks from "@/components/HowItWorks";
 import Bento from "@/components/Bento";
 import Pricing from "@/components/Pricing";
 import Integrations from "@/components/Integrations";
+import Security from "@/components/Security";
 import CaseStudyBanner from "@/components/CaseStudyBanner";
 import CaseStudy from "@/components/CaseStudy";
 import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
+import ERPLogoBanner from "@/components/ERPLogoBanner";
 import { cookieManager } from "@/utils/cookieManager";
 
 export default function LandingPage() {
@@ -41,6 +43,11 @@ export default function LandingPage() {
           <CaseStudyBanner />
         </section>
 
+        {/* ERP Logo Trust Banner */}
+        <section id="erp-logos" aria-label="Compatible ERP Systems">
+          <ERPLogoBanner />
+        </section>
+
         {/* Features/Bento Grid */}
         <section id="features" aria-labelledby="features-heading">
           <Bento />
@@ -54,6 +61,11 @@ export default function LandingPage() {
         {/* How It Works */}
         <section id="how-it-works" aria-labelledby="how-it-works-heading">
           <HowItWorks />
+        </section>
+
+        {/* Security */}
+        <section id="security" aria-labelledby="security-heading">
+          <Security />
         </section>
 
         {/* Testimonials */}

@@ -1,6 +1,10 @@
+'use client';
+
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 const Integrations: React.FC = () => {
+  const t = useTranslations('integrations');
   const [hoveredElement, setHoveredElement] = useState<string | null>(null);
   const [animationPhase, setAnimationPhase] = useState(0);
 
@@ -114,10 +118,10 @@ const Integrations: React.FC = () => {
           {/* Header Section */}
           <div className="content-stretch flex flex-col items-center justify-start w-full">
             <div className="font-['Inter:Regular',_sans-serif] font-normal leading-[normal] text-[28px] sm:text-[32px] md:text-[40px] text-black tracking-[-1.6px] mb-4 text-center px-4">
-              <p>Integrations Tailored to Your Stack</p>
+              <p>{t('title')}</p>
             </div>
             <div className="font-['Inter:Medium',_sans-serif] font-medium opacity-40 text-[14px] sm:text-[15px] text-black tracking-[-0.6px] text-center max-w-[700px] px-4">
-              <p className="leading-[normal]">Our AI agents are custom-built for your specific technology environment. Every integration is carefully configured to match your unique business processes and requirements.</p>
+              <p className="leading-[normal]">{t('subtitle')}</p>
             </div>
           </div>
 
@@ -224,17 +228,35 @@ const Integrations: React.FC = () => {
                 />
               </div>
 
-              {/* Lemonsoft Text - positioned exactly like Figma, faded until hover */}
-              <div 
+              {/* SAP Logo - positioned to the right of NetSuite */}
+              <div className="absolute" style={{ left: '400px', top: '2px', width: '70px', height: '35px' }}>
+                <img
+                  src="/erp-logos/sap.svg"
+                  alt="SAP"
+                  className={`w-full h-full object-contain ${fadeIconClass}`}
+                />
+              </div>
+
+              {/* Visma Logo - positioned below ERP box */}
+              <div className="absolute" style={{ left: '455px', top: '58px', width: '100px', height: '30px' }}>
+                <img
+                  src="/erp-logos/visma.svg"
+                  alt="Visma"
+                  className={`w-full h-full object-contain ${fadeIconClass}`}
+                />
+              </div>
+
+              {/* Lemonsoft Text */}
+              <div
                 className="absolute"
                 style={{
-                  left: '450px',
-                  top: '69px',
+                  left: '350px',
+                  top: '65px',
                   width: '71px',
                   height: '15px'
                 }}
               >
-                <span className={`text-[15px] font-normal tracking-[-0.6px] ${fadeIconClass}`}>Lemonsoft</span>
+                <span className={`text-[14px] font-normal tracking-[-0.5px] ${fadeIconClass}`}>Lemonsoft</span>
               </div>
 
               {/* LLM Box - positioned exactly like Figma */}
@@ -310,10 +332,10 @@ const Integrations: React.FC = () => {
               {/* Hover Information */}
               {hoveredElement && (
                 <div className="absolute bottom-[-40px] left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-2 rounded-lg text-sm transition-all duration-300 z-20 max-w-xs text-center whitespace-nowrap">
-                  {hoveredElement === 'center' && "ERP Agent - Your AI-powered integration hub"}
-                  {hoveredElement === 'erp' && "ERP Systems - Connect with your business core"}
-                  {hoveredElement === 'llm' && "AI Models - Powered by advanced language processing"}
-                  {hoveredElement === 'apps' && "Applications - Seamless app integrations"}
+                  {hoveredElement === 'center' && t('centerTooltip')}
+                  {hoveredElement === 'erp' && t('erpTooltip')}
+                  {hoveredElement === 'llm' && t('llmTooltip')}
+                  {hoveredElement === 'apps' && t('appsTooltip')}
                 </div>
               )}
               </div>

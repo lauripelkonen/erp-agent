@@ -1,6 +1,10 @@
+'use client';
+
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const Footer: React.FC = () => {
+  const t = useTranslations('footer');
   return (
     <footer className="relative bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-8 relative py-20">
@@ -25,13 +29,13 @@ const Footer: React.FC = () => {
             {/* Left Side - Description & Sales Contact */}
             <div className="max-w-md">
               <p className="font-['Inter:Medium',_sans-serif] font-medium text-[16px] leading-[1.4em] tracking-[-0.6px] text-[#686E73] mb-8">
-                ERP Agent helps teams automate complex business processes with AI-powered agents — everything you need for intelligent automation in one place
+                {t('description')}
               </p>
-              
+
               {/* Sales Contact */}
               <div>
                 <h4 className="font-['Inter:Medium',_sans-serif] font-medium text-[16px] leading-[1.4em] tracking-[-0.6px] text-black mb-3">
-                  Sales Inquiries
+                  {t('salesInquiries')}
                 </h4>
                 <div className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-[#686E73]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,14 +54,20 @@ const Footer: React.FC = () => {
               {/* Product Column */}
               <div>
                 <h3 className="font-['Inter:Medium',_sans-serif] font-medium text-[18px] leading-[1.4em] tracking-[-0.6px] text-black mb-6">
-                  Product
+                  {t('solutions')}
                 </h3>
                 <div className="flex flex-col gap-[14px]">
+                  <a href="/sales-quote-software" className="font-['Inter:Medium',_sans-serif] font-medium text-[16px] leading-[1.4em] tracking-[-0.6px] text-[#686E73] hover:text-black transition-colors">
+                    {t('salesQuoteSoftware')}
+                  </a>
+                  <a href="/purchase-order-automation" className="font-['Inter:Medium',_sans-serif] font-medium text-[16px] leading-[1.4em] tracking-[-0.6px] text-[#686E73] hover:text-black transition-colors">
+                    {t('purchaseOrderAutomation')}
+                  </a>
                   <a href="/#features" className="font-['Inter:Medium',_sans-serif] font-medium text-[16px] leading-[1.4em] tracking-[-0.6px] text-[#686E73] hover:text-black transition-colors">
-                    Features
+                    {t('features')}
                   </a>
                   <a href="/#integrations" className="font-['Inter:Medium',_sans-serif] font-medium text-[16px] leading-[1.4em] tracking-[-0.6px] text-[#686E73] hover:text-black transition-colors">
-                    Integrations
+                    {t('integrations')}
                   </a>
                 </div>
               </div>
@@ -65,14 +75,14 @@ const Footer: React.FC = () => {
               {/* Company Column */}
               <div>
                 <h3 className="font-['Inter:Medium',_sans-serif] font-medium text-[18px] leading-[1.4em] tracking-[-0.6px] text-black mb-6">
-                  Company
+                  {t('company')}
                 </h3>
                 <div className="flex flex-col gap-[14px]">
                   <a href="/" className="font-['Inter:Medium',_sans-serif] font-medium text-[16px] leading-[1.4em] tracking-[-0.6px] text-[#686E73] hover:text-black transition-colors">
-                    About
+                    {t('about')}
                   </a>
                   <a href="/careers" className="font-['Inter:Medium',_sans-serif] font-medium text-[16px] leading-[1.4em] tracking-[-0.6px] text-[#686E73] hover:text-black transition-colors">
-                    Careers
+                    {t('careers')}
                   </a>
                 </div>
               </div>
@@ -86,13 +96,13 @@ const Footer: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-col md:flex-row items-center gap-4">
               <div className="font-['Inter:Medium',_sans-serif] font-medium text-[14px] leading-[1.4em] tracking-[-0.6px] text-[#686E73]">
-                © 2025 DataFigured Oy. All rights reserved
+                © {t('copyright')}
               </div>
-              
+
               {/* Social Links */}
               <div className="flex items-center gap-3">
                 <span className="font-['Inter:Medium',_sans-serif] font-medium text-[12px] leading-[1.4em] tracking-[-0.48px] text-[#686E73]">
-                  Follow us:
+                  {t('followUs')}
                 </span>
                 <a 
                   href="https://www.linkedin.com/company/erp-agent" 
@@ -114,10 +124,10 @@ const Footer: React.FC = () => {
             
             <div className="flex gap-6">
               <a href="/terms-of-service" className="font-['Inter:Medium',_sans-serif] font-medium text-[14px] leading-[1.4em] tracking-[-0.6px] text-[#686E73] hover:text-black transition-colors">
-                Terms of Service
+                {t('termsOfService')}
               </a>
               <a href="/privacy-policy" className="font-['Inter:Medium',_sans-serif] font-medium text-[14px] leading-[1.4em] tracking-[-0.6px] text-[#686E73] hover:text-black transition-colors">
-                Privacy Policy
+                {t('privacyPolicy')}
               </a>
             </div>
           </div>

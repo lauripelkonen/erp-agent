@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 interface TestimonialCardProps {
   role: string;
@@ -55,20 +58,22 @@ function TestimonialCard({ role, content, rating }: TestimonialCardProps) {
 
 
 export default function Testimonials() {
+  const t = useTranslations('testimonials');
+
   const testimonials = [
     {
-      role: "Purchaser",
-      content: "Agent does all the purchase orders perfectly and daily warehouse transfers automatically. Handling 2000+ suppliers has become more accurate and easier than we ever imagined.",
+      role: t('purchaserRole'),
+      content: t('purchaserContent'),
       rating: 5
     },
     {
-      role: "CEO",
-      content: "The value as a whole has been transformational. The insights our ERP agent fetches give us deep analytics on purchasing patterns, vendor performance, and inventory optimization that drive strategic decisions.",
+      role: t('ceoRole'),
+      content: t('ceoContent'),
       rating: 5
     },
     {
-      role: "Sales Manager", 
-      content: "Our sales team has gained 50% efficiency at drafting offers for customers. The agent identifies correct products, prices them accurately, and creates offers in the system. Requests with hundreds of rows that took hours daily from sales personnel - now we handle many more requests daily.",
+      role: t('salesRole'),
+      content: t('salesContent'),
       rating: 5
     }
   ];
@@ -83,12 +88,12 @@ export default function Testimonials() {
 
             {/* Main Title */}
             <div className="font-['Inter:Regular',_sans-serif] font-normal leading-[normal] text-[40px] text-black tracking-[-1.6px] mb-4 text-center">
-              <p>Reviews from our customers</p>
+              <p>{t('title')}</p>
             </div>
-            
+
             {/* Subtitle */}
             <div className="font-['Inter:Medium',_sans-serif] font-medium opacity-40 text-[15px] text-black tracking-[-0.6px] text-center max-w-[600px]">
-              <p className="leading-[normal]">Discover what our users have to say about their experience with our platform.</p>
+              <p className="leading-[normal]">{t('subtitle')}</p>
             </div>
           </div>
           

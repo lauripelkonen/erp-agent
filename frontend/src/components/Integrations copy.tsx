@@ -14,8 +14,12 @@ const Integrations: React.FC = () => {
       title: "ERP Systems",
       description: "Deep integration with your core business systems",
       items: [
-        { name: "NetSuite", description: "Complete automation for purchase orders, inventory, and financial workflows" },
-        { name: "Lemonsoft", description: "Streamlined operations for Nordic businesses with full system integration" }
+        { name: "SAP", description: "Enterprise-grade automation for global supply chain and procurement processes" },
+        { name: "Oracle NetSuite", description: "Complete automation for purchase orders, inventory, and financial workflows" },
+        { name: "Microsoft Dynamics", description: "Seamless integration with Dynamics 365 Business Central and Finance" },
+        { name: "Visma", description: "Full support for Visma.net and Visma Business for Nordic enterprises" },
+        { name: "Lemonsoft", description: "Streamlined operations for Nordic businesses with full system integration" },
+        { name: "Odoo", description: "Open-source ERP integration for flexible and scalable business operations" }
       ]
     },
     {

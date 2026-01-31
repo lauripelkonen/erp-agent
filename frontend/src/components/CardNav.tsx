@@ -1,5 +1,8 @@
+'use client';
+
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { useTranslations } from 'next-intl';
 
 interface NavLink {
   label: string;
@@ -37,6 +40,7 @@ const CardNav = ({
   buttonBgColor,
   buttonTextColor
 }: CardNavProps) => {
+  const t = useTranslations('nav');
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
   const navRef = useRef<HTMLElement>(null);
@@ -178,7 +182,7 @@ const CardNav = ({
             className="card-nav-cta-button"
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
           >
-            Get Started
+            {t('getStarted')}
           </button>
         </div>
 

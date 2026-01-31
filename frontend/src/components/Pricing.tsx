@@ -1,6 +1,10 @@
+'use client';
+
 import React, { useEffect, useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 const Pricing: React.FC = () => {
+  const t = useTranslations('pricing');
   const vantaRef = useRef<HTMLElement>(null);
   const vantaEffect = useRef<any>(null);
 
@@ -63,10 +67,10 @@ const Pricing: React.FC = () => {
           {/* Header Section */}
           <div className="content-stretch flex flex-col items-center justify-start w-full">
             <div className="font-['Inter:Regular',_sans-serif] font-normal leading-[normal] text-[40px] text-black tracking-[-1.6px] mb-4 text-center">
-              <p>Simple, Transparent Pricing</p>
+              <p>{t('title')}</p>
             </div>
             <div className="font-['Inter:Medium',_sans-serif] font-medium opacity-40 text-[15px] text-black tracking-[-0.6px] text-center max-w-[600px]">
-              <p className="leading-[normal]">Clear structure with no hidden costs. Get started with our proven pricing model designed for growing businesses.</p>
+              <p className="leading-[normal]">{t('subtitle')}</p>
             </div>
           </div>
 
@@ -83,15 +87,15 @@ const Pricing: React.FC = () => {
                     </div>
                   </div>
                   <h3 className="font-['Inter:Medium',_sans-serif] font-medium text-[24px] text-black tracking-[-0.96px] mb-4">
-                    <p className="leading-[normal]">One-Time Setup Fee</p>
+                    <p className="leading-[normal]">{t('setupTitle')}</p>
                   </h3>
                   <p className="font-['Inter:Medium',_sans-serif] font-medium opacity-60 text-[15px] text-black tracking-[-0.6px] leading-[1.5] mb-6">
-                    Covers initial integration, configuration, training, and deployment of your custom AI agent. Everything needed to get you operational.
+                    {t('setupDesc')}
                   </p>
                   <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[rgba(0,0,0,0.02)] to-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.08)] rounded-[18px] px-4 py-2">
                     <div className="w-2 h-2 bg-[#2600FF] rounded-full"></div>
                     <span className="font-['Inter:Medium',_sans-serif] font-medium text-[13px] text-black tracking-[-0.52px]">
-                      Project-based pricing
+                      {t('setupBadge')}
                     </span>
                   </div>
                 </div>
@@ -104,15 +108,15 @@ const Pricing: React.FC = () => {
                     </div>
                   </div>
                   <h3 className="font-['Inter:Medium',_sans-serif] font-medium text-[24px] text-black tracking-[-0.96px] mb-4">
-                    <p className="leading-[normal]">Monthly SaaS Subscription</p>
+                    <p className="leading-[normal]">{t('monthlyTitle')}</p>
                   </h3>
                   <p className="font-['Inter:Medium',_sans-serif] font-medium opacity-60 text-[15px] text-black tracking-[-0.6px] leading-[1.5] mb-6">
-                    Ongoing access to your AI agent, infrastructure, updates, support, and continuous optimization. Scale with your business needs.
+                    {t('monthlyDesc')}
                   </p>
                   <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[rgba(0,0,0,0.02)] to-[rgba(0,0,0,0.05)] border border-[rgba(0,0,0,0.08)] rounded-[18px] px-4 py-2">
                     <div className="w-2 h-2 bg-[#00ff00] rounded-full"></div>
                     <span className="font-['Inter:Medium',_sans-serif] font-medium text-[13px] text-black tracking-[-0.52px]">
-                      Predictable monthly cost
+                      {t('monthlyBadge')}
                     </span>
                   </div>
                 </div>
@@ -122,7 +126,7 @@ const Pricing: React.FC = () => {
               {/* Contact Note */}
               <div className="mt-12 pt-8 border-t border-[rgba(0,0,0,0.08)]">
                 <p className="font-['Inter:Medium',_sans-serif] font-medium opacity-50 text-[14px] text-black tracking-[-0.56px] leading-[1.5]">
-                  Pricing varies based on complexity, integrations, and business requirements. Contact us for a detailed quote tailored to your specific needs.
+                  {t('contactNote')}
                 </p>
               </div>
             </div>

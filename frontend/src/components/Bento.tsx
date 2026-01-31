@@ -1,36 +1,46 @@
+'use client';
+
 import React from 'react';
+import { useTranslations } from 'next-intl';
+import DataFlowNetwork from './AlgorithmicArt/DataFlowNetwork';
 
 const Bento: React.FC = () => {
+  const t = useTranslations('bento');
   const features = [
     {
-      title: 'Purchase Order Automation',
-      description: 'Auto-creates POs from reorder signals, vendor SLAs, and price lists. Vendor selection with multi-criteria scoring for price, lead time, and reliability.',
+      title: t('poTitle'),
+      description: t('poDesc'),
     },
     {
-      title: 'Quote & Offer Generation',
-      description: 'Generates customer-ready quotes from requests, emails, or CRM notes. Applies pricing rules, discounts, and availability checks from ERP data.',
+      title: t('quoteTitle'),
+      description: t('quoteDesc'),
     },
     {
-      title: 'Warehouse Transfers',
-      description: 'Execute daily stock transfers between locations based on demand patterns, inventory levels, and business rules with full audit trails.',
+      title: t('warehouseTitle'),
+      description: t('warehouseDesc'),
     },
     {
-      title: 'ERP Insights & Analytics',
-      description: 'Retrieve deep insights from your ERP system. Analyze purchasing patterns, vendor performance, and inventory optimization opportunities.',
+      title: t('insightsTitle'),
+      description: t('insightsDesc'),
     }
   ];
 
   return (
-    <section id="features" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-8">
+    <section id="features" className="py-20 relative overflow-hidden">
+      {/* Decorative DataFlowNetwork background */}
+      <div className="absolute top-0 right-0 w-[600px] h-[360px] opacity-[0.07] pointer-events-none hidden lg:block">
+        <DataFlowNetwork className="w-full h-full" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-8 relative z-10">
         <div className="content-stretch flex flex-col gap-12 items-start justify-start relative">
           {/* Header Section */}
           <div className="content-stretch flex flex-col items-center justify-start w-full">
             <div className="font-['Inter:Regular',_sans-serif] font-normal leading-[normal] text-[40px] text-black tracking-[-1.6px] mb-4 text-center">
-              <h2 id="features-heading">Powerful ERP Automation</h2>
+              <h2 id="features-heading">{t('title')}</h2>
             </div>
             <div className="font-['Inter:Medium',_sans-serif] font-medium opacity-40 text-[15px] text-black tracking-[-0.6px] text-center max-w-[600px]">
-              <p className="leading-[normal]">Advanced AI agents designed to automate complex ERP tasks and deliver professional-grade results directly within your system.</p>
+              <p className="leading-[normal]">{t('subtitle')}</p>
             </div>
           </div>
 

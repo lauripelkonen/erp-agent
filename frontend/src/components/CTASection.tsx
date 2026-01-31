@@ -1,6 +1,10 @@
+'use client';
+
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 const CTASection: React.FC = () => {
+  const t = useTranslations('ctaSection');
   return (
     <section id="cta" className="py-20 relative bg-gradient-to-b from-white to-[#f8f9fa]">
       <div className="max-w-7xl mx-auto px-8">
@@ -18,10 +22,10 @@ const CTASection: React.FC = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="font-['Inter:Regular',_sans-serif] font-normal text-[32px] lg:text-[42px] text-black tracking-[-1.3px] lg:tracking-[-1.7px] leading-[1.1] mb-6">
-                  Ready to Transform Your ERP Operations?
+                  {t('title')}
                 </h2>
                 <p className="font-['Inter:Medium',_sans-serif] font-medium text-[16px] lg:text-[18px] text-[#686E73] tracking-[-0.64px] lg:tracking-[-0.72px] leading-[1.5] mb-8">
-                  Our AI-powered ERP automation has already saved over 40,000 hours of manual work. Book a free consultation to see how we can streamline your business processes and deliver similar results.
+                  {t('subtitle')}
                 </p>
               </div>
 
@@ -34,7 +38,7 @@ const CTASection: React.FC = () => {
                     </svg>
                   </div>
                   <span className="font-['Inter:Medium',_sans-serif] font-medium text-[15px] text-black tracking-[-0.6px]">
-                    Free 30-minute consultation
+                    {t('benefit1')}
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -44,7 +48,7 @@ const CTASection: React.FC = () => {
                     </svg>
                   </div>
                   <span className="font-['Inter:Medium',_sans-serif] font-medium text-[15px] text-black tracking-[-0.6px]">
-                    Custom automation strategy for your business
+                    {t('benefit2')}
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -54,20 +58,20 @@ const CTASection: React.FC = () => {
                     </svg>
                   </div>
                   <span className="font-['Inter:Medium',_sans-serif] font-medium text-[15px] text-black tracking-[-0.6px]">
-                    ROI projection and implementation timeline
+                    {t('benefit3')}
                   </span>
                 </div>
               </div>
 
               {/* CTA Button */}
               <div className="pt-4">
-                <a 
-                  href="https://cal.com/lauri-pelkonen" 
-                  target="_blank" 
+                <a
+                  href="https://cal.com/lauri-pelkonen"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-gradient-to-b from-[#2600FF] to-[#1a00cc] text-white font-['Inter:Medium',_sans-serif] font-medium text-[16px] lg:text-[18px] tracking-[-0.64px] lg:tracking-[-0.72px] px-8 py-4 rounded-[36px] shadow-[0px_8px_32px_rgba(38,0,255,0.25),0px_4px_16px_rgba(38,0,255,0.15),0px_2px_8px_rgba(38,0,255,0.1)] hover:shadow-[0px_12px_40px_rgba(38,0,255,0.3),0px_6px_20px_rgba(38,0,255,0.2),0px_3px_10px_rgba(38,0,255,0.15)] hover:scale-105 transition-all duration-200 group"
                 >
-                  <span>Book Free Consultation</span>
+                  <span>{t('button')}</span>
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -102,16 +106,16 @@ const CTASection: React.FC = () => {
                 <div className="text-center space-y-3">
                   <div>
                     <h3 className="font-['Inter:Medium',_sans-serif] font-medium text-[20px] text-black tracking-[-0.8px] mb-1">
-                      Lauri Pelkonen
+                      {t('founderName')}
                     </h3>
                     <p className="font-['Inter:Medium',_sans-serif] font-medium text-[14px] text-[#2600FF] tracking-[-0.56px]">
-                      Founder & CEO
+                      {t('founderTitle')}
                     </p>
                   </div>
-                  
+
                   <div className="pt-2 space-y-3">
                     <p className="font-['Inter:Medium',_sans-serif] font-medium text-[13px] text-[#686E73] tracking-[-0.52px] leading-[1.4] italic">
-                      "I personally help every client design their automation strategy. Let's discuss how AI can transform your ERP operations."
+                      &quot;{t('founderQuote')}&quot;
                     </p>
                     <div className="space-y-2">
                       <div className="flex items-center justify-center gap-2 text-[12px]">
@@ -140,7 +144,7 @@ const CTASection: React.FC = () => {
                         40K+
                       </div>
                       <div className="font-['Inter:Medium',_sans-serif] font-medium text-[11px] text-[#686E73] tracking-[-0.44px]">
-                        Hours Saved
+                        {t('hoursSaved')}
                       </div>
                     </div>
                     <div className="text-center">
@@ -148,7 +152,7 @@ const CTASection: React.FC = () => {
                         100%
                       </div>
                       <div className="font-['Inter:Medium',_sans-serif] font-medium text-[11px] text-[#686E73] tracking-[-0.44px]">
-                        Success Rate
+                        {t('successRate')}
                       </div>
                     </div>
                   </div>
@@ -164,7 +168,7 @@ const CTASection: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 bg-[#00D084] rounded-full"></div>
                   <span className="font-['Inter:Medium',_sans-serif] font-medium text-[13px] text-[#686E73] tracking-[-0.52px]">
-                    Usually responds within 2 hours
+                    {t('responseTime')}
                   </span>
                 </div>
                 <div className="flex items-center gap-1">
@@ -176,13 +180,13 @@ const CTASection: React.FC = () => {
                     ))}
                   </div>
                   <span className="font-['Inter:Medium',_sans-serif] font-medium text-[13px] text-[#686E73] tracking-[-0.52px] ml-1">
-                    5.0 rating
+                    {t('rating')}
                   </span>
                 </div>
               </div>
-              
+
               <div className="font-['Inter:Medium',_sans-serif] font-medium text-[13px] text-[#686E73] tracking-[-0.52px]">
-                No commitment • Free consultation
+                {t('noCommitment')}
               </div>
             </div>
           </div>

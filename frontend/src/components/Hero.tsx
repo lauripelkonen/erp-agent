@@ -1,8 +1,11 @@
 import { imgFrame, imgFrame1, imgFrame8306, imgFrame2, imgFrame3, imgEllipse1, imgVector214 } from "../imports/svg-ixvb3";
 import CardNav from './CardNav';
 import './CardNav.css';
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import Link from 'next/link';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslations } from 'next-intl';
 
   function Group47280() {
     return (
@@ -60,16 +63,64 @@ import { gsap } from 'gsap';
   }
   
   function Frame8307() {
+    const t = useTranslations('nav');
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useLayoutEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+          setIsDropdownOpen(false);
+        }
+      };
+      document.addEventListener('mousedown', handleClickOutside);
+      return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
     return (
       <div className="content-stretch flex font-['Inter:Medium',_sans-serif] font-medium gap-6 items-center justify-start leading-[0] not-italic relative shrink-0 text-[15px] text-black text-center text-nowrap tracking-[-0.6px]">
-        <a href="/#features" className="opacity-40 relative shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
-          <p className="leading-[normal] text-nowrap whitespace-pre">Product</p>
-        </a>
+        {/* Solutions dropdown */}
+        <div ref={dropdownRef} className="relative">
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="opacity-40 relative shrink-0 hover:opacity-80 transition-opacity cursor-pointer flex items-center gap-1 bg-transparent border-none"
+          >
+            <span className="leading-[normal] text-nowrap whitespace-pre">{t('solutions')}</span>
+            <svg
+              className={`w-3 h-3 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {isDropdownOpen && (
+            <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
+              <Link
+                href="/sales-quote-software"
+                className="block px-4 py-2.5 text-[14px] text-gray-700 hover:bg-gray-50 transition-colors text-left leading-normal"
+                onClick={() => setIsDropdownOpen(false)}
+              >
+                {t('salesQuoteSoftware')}
+              </Link>
+              <Link
+                href="/purchase-order-automation"
+                className="block px-4 py-2.5 text-[14px] text-gray-700 hover:bg-gray-50 transition-colors text-left leading-normal"
+                onClick={() => setIsDropdownOpen(false)}
+              >
+                {t('purchaseOrderAutomation')}
+              </Link>
+            </div>
+          )}
+        </div>
+
         <a href="/#case-study" className="opacity-40 relative shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
-          <p className="leading-[normal] text-nowrap whitespace-pre">Use Case</p>
+          <p className="leading-[normal] text-nowrap whitespace-pre">{t('useCase')}</p>
         </a>
         <a href="/#cta" className="opacity-40 relative shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
-          <p className="leading-[normal] text-nowrap whitespace-pre">Get in Touch</p>
+          <p className="leading-[normal] text-nowrap whitespace-pre">{t('getInTouch')}</p>
         </a>
       </div>
     );
@@ -85,10 +136,11 @@ import { gsap } from 'gsap';
   }
   
   function Frame8305() {
+    const t = useTranslations('nav');
     return (
       <a href="/#cta" className="bg-black box-border content-stretch flex gap-2.5 items-center justify-center px-4 py-1.5 relative rounded-[36px] shrink-0 border-none cursor-pointer hover:bg-gray-800 transition-colors">
         <div className="font-['Inter:Medium',_sans-serif] font-medium leading-[0] not-italic relative shrink-0 text-[13px] text-center text-nowrap text-white tracking-[-0.52px]">
-          <p className="leading-[normal] whitespace-pre">Get Started</p>
+          <p className="leading-[normal] whitespace-pre">{t('getStarted')}</p>
         </div>
       </a>
     );
@@ -133,7 +185,10 @@ import { gsap } from 'gsap';
         {/* Desktop Navigation */}
         <div className="hidden lg:flex absolute content-stretch items-center justify-between left-1/2 max-w-7xl top-10 transform -translate-x-1/2 w-full px-8">
           <Frame8308 />
-          <Frame8305 />
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            <Frame8305 />
+          </div>
         </div>
         
         {/* Mobile Navigation */}
@@ -142,11 +197,12 @@ import { gsap } from 'gsap';
             // Mirror desktop nav structure/links for mobile
             const mobileItems = [
               {
-                label: 'Product',
+                label: 'Solutions',
                 bgColor: '#4d4d4d',
                 textColor: '#fff',
                 links: [
-                  { label: 'Features', ariaLabel: 'Product Features', href: '/#features' },
+                  { label: 'Sales Quote Software', ariaLabel: 'Sales Quote Software', href: '/sales-quote-software' },
+                  { label: 'Purchase Order Automation', ariaLabel: 'Purchase Order Automation', href: '/purchase-order-automation' },
                 ],
               },
               {
@@ -186,39 +242,42 @@ import { gsap } from 'gsap';
   }
   
   function Frame8303() {
+    const t = useTranslations('hero');
     return (
       <div className="content-stretch flex flex-col font-['Inter:Medium',_sans-serif] font-medium gap-4 items-start justify-start leading-[0] not-italic relative shrink-0 text-black w-full">
         <h1 className="font-['Inter:Regular',_sans-serif] font-normal leading-[normal] relative shrink-0 text-[28px] lg:text-[40px] tracking-[-1px] lg:tracking-[-1.6px] w-full lg:w-[480px] m-0">
-          <span className="block text-[rgba(0,0,0,0.4)]">AI-Powered Automation for</span>
-          <span className="block">Wholesale Distribution ERP</span>
+          <span className="block text-[rgba(0,0,0,0.4)]">{t('title1')}</span>
+          <span className="block">{t('title2')}</span>
         </h1>
         <p className="opacity-40 relative shrink-0 text-[14px] lg:text-[15px] tracking-[-0.6px] w-full lg:w-[380px] leading-[normal] break-words break-normal whitespace-normal [overflow-wrap:anywhere] m-0">
-          Automate purchase orders, sales quotes & warehouse transfers with AI agents working 24/7 on your ERP system.
+          {t('subtitle')}
         </p>
         <div className="opacity-60 relative shrink-0 text-[12px] lg:text-[13px] tracking-[-0.52px] w-full lg:w-[346px] mt-2">
-          <p className="leading-[normal]">✓ Works with Lemonsoft, NetSuite & more</p>
-          <p className="leading-[normal]">✓ Tailored for wholesale distributors</p>
+          <p className="leading-[normal]">✓ {t('feature1')}</p>
+          <p className="leading-[normal]">✓ {t('feature2')}</p>
         </div>
       </div>
     );
   }
   
   function Frame8304() {
+    const t = useTranslations('nav');
     return (
       <a href="/#cta" className="bg-gradient-to-b border-none box-border content-stretch cursor-pointer flex from-[#4d4d4d] gap-2.5 items-center justify-center px-4 py-2 lg:px-6 lg:py-3 relative rounded-[36px] shrink-0 to-[#0a0a0a] shadow-[0px_8px_32px_rgba(0,0,0,0.12),0px_4px_16px_rgba(0,0,0,0.08),0px_2px_8px_rgba(0,0,0,0.06)] hover:shadow-[0px_12px_40px_rgba(0,0,0,0.15),0px_6px_20px_rgba(0,0,0,0.1),0px_3px_10px_rgba(0,0,0,0.08)] transition-shadow duration-200">
         <div className="font-['Inter:Medium',_sans-serif] font-medium leading-[0] not-italic relative shrink-0 text-[14px] lg:text-[15px] text-center text-nowrap text-white tracking-[-0.6px] z-10">
-          <p className="leading-[normal] whitespace-pre">Get Started</p>
+          <p className="leading-[normal] whitespace-pre">{t('getStarted')}</p>
         </div>
       </a>
     );
   }
-  
+
   function Frame8310() {
+    const t = useTranslations('hero');
     return (
       <a href="/#case-study" className="bg-[rgba(0,0,0,0.02)] border-none box-border content-stretch cursor-pointer flex gap-2.5 items-center justify-center px-4 py-2 lg:px-6 lg:py-3 relative rounded-[36px] shrink-0">
         <div aria-hidden="true" className="absolute border border-[rgba(0,0,0,0.1)] border-solid inset-0 pointer-events-none rounded-[36px]" />
         <div className="font-['Inter:Medium',_sans-serif] font-medium leading-[0] not-italic relative shrink-0 text-[14px] lg:text-[15px] text-[rgba(0,0,0,0.7)] text-center text-nowrap tracking-[-0.6px]">
-          <p className="leading-[normal] whitespace-pre">Learn More</p>
+          <p className="leading-[normal] whitespace-pre">{t('learnMore')}</p>
         </div>
       </a>
     );
@@ -263,20 +322,20 @@ import { gsap } from 'gsap';
   }
   
   function Group47294() {
+    const t = useTranslations('stats');
     return (
       <>
         {/* Desktop Layout */}
         <div className="hidden lg:block absolute left-1/2 max-w-7xl top-[710px] transform -translate-x-1/2 w-full px-8">
           <div className="font-['Inter:Medium',_sans-serif] font-medium leading-[0] not-italic text-black">
             <div className="absolute left-0 opacity-40 text-[15px] top-[52px] tracking-[-0.6px] w-[180px]">
-              <p className="leading-[normal]">Hours saved yearly</p>
+              <p className="leading-[normal]">{t('hoursSaved')}</p>
             </div>
             <div className="absolute left-[200px] opacity-40 text-[15px] top-[52px] tracking-[-0.6px] w-[180px]">
-              <p className="leading-[normal]">Faster quote turnaround</p>
+              <p className="leading-[normal]">{t('fasterQuote')}</p>
             </div>
             <div className="absolute leading-[normal] left-[400px] opacity-40 text-[15px] top-[52px] tracking-[-0.6px] w-[200px]">
-              <p className="mb-0">Cut-off in purchasing</p>
-              <p>hours</p>
+              <p className="leading-[normal]">{t('cutOff')}</p>
             </div>
             <div className="absolute left-0 text-[40px] top-0 tracking-[-1.6px] w-[180px]">
               <p className="leading-[normal]">40K+</p>
@@ -289,7 +348,7 @@ import { gsap } from 'gsap';
             </div>
           </div>
         </div>
-        
+
         {/* Mobile Layout */}
         <div className="block lg:hidden relative w-full px-8 pb-8">
           <div className="grid grid-cols-3 gap-4 max-w-md mx-auto">
@@ -298,7 +357,7 @@ import { gsap } from 'gsap';
                 <p className="leading-[normal]">40K+</p>
               </div>
               <div className="font-['Inter:Medium',_sans-serif] font-medium opacity-40 text-[13px] text-black tracking-[-0.52px]">
-                <p className="leading-[normal]">Hours saved yearly</p>
+                <p className="leading-[normal]">{t('hoursSaved')}</p>
               </div>
             </div>
             <div className="text-center">
@@ -306,7 +365,7 @@ import { gsap } from 'gsap';
                 <p className="leading-[normal]">10x</p>
               </div>
               <div className="font-['Inter:Medium',_sans-serif] font-medium opacity-40 text-[13px] text-black tracking-[-0.52px]">
-                <p className="leading-[normal]">Faster quote turnaround</p>
+                <p className="leading-[normal]">{t('fasterQuote')}</p>
               </div>
             </div>
             <div className="text-center">
@@ -314,7 +373,7 @@ import { gsap } from 'gsap';
                 <p className="leading-[normal]">50%</p>
               </div>
               <div className="font-['Inter:Medium',_sans-serif] font-medium opacity-40 text-[13px] text-black tracking-[-0.52px]">
-                <p className="leading-[normal]">Cut-off in purchasing hours</p>
+                <p className="leading-[normal]">{t('cutOff')}</p>
               </div>
             </div>
           </div>

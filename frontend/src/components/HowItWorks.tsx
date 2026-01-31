@@ -1,6 +1,11 @@
+'use client';
+
 import React, { useEffect, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
+import AutomationPulse from './AlgorithmicArt/AutomationPulse';
 
 const HowItWorks: React.FC = () => {
+  const t = useTranslations('howItWorks');
   const [activeStep, setActiveStep] = useState(0);
   const sectionRef = useRef<HTMLElement>(null);
   const stepRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -8,21 +13,21 @@ const HowItWorks: React.FC = () => {
   const steps = [
     {
       number: 1,
-      title: 'Set-up With Your ERP',
-      description: 'Seamlessly integrate with your existing ERP system. Our agent works with every major ERP system.',
-      timeline: '1-2 weeks'
+      title: t('step1Title'),
+      description: t('step1Desc'),
+      timeline: t('step1Timeline')
     },
     {
       number: 2,
-      title: 'Train AI Agent', 
-      description: 'We teach the agent your business principles, vendor preferences, and specific operational details by feeding it your historical data and working closely with you. This collaborative approach makes training effortless for your team.',
-      timeline: '1-3 weeks'
+      title: t('step2Title'),
+      description: t('step2Desc'),
+      timeline: t('step2Timeline')
     },
     {
       number: 3,
-      title: 'Automate & Optimize',
-      description: 'Watch as your ERP processes become faster, more accurate, and completely automated. Focus on growth while we handle the routine tasks.',
-      timeline: 'Enjoy the benefits'
+      title: t('step3Title'),
+      description: t('step3Desc'),
+      timeline: t('step3Timeline')
     }
   ];
 
@@ -56,10 +61,15 @@ const HowItWorks: React.FC = () => {
   }, [steps.length]);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="py-20 relative"
     >
+      {/* Decorative AutomationPulse background - moved inside the content area to avoid overflow issues */}
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] opacity-[0.05] pointer-events-none hidden lg:block overflow-hidden">
+        <AutomationPulse className="w-full h-full" />
+      </div>
+
       {/* Desktop Layout */}
       <div className="hidden lg:block">
         <div className="max-w-7xl mx-auto px-8">
@@ -71,10 +81,10 @@ const HowItWorks: React.FC = () => {
                 {/* Header Section */}
                 <div className="mb-8">
                   <div className="font-['Inter:Regular',_sans-serif] font-normal leading-[normal] text-[40px] text-black tracking-[-1.6px] mb-4">
-                    <h2 id="how-it-works-heading">Every Agent is Custom-Built</h2>
+                    <h2 id="how-it-works-heading">{t('title')}</h2>
                   </div>
                   <div className="font-['Inter:Medium',_sans-serif] font-medium opacity-40 text-[15px] text-black tracking-[-0.6px] max-w-[500px]">
-                    <p className="leading-[normal]">Each AI agent is carefully designed and configured to match your specific business processes, data structures, and operational requirements. Our team works closely with you to ensure seamless integration with your existing workflows.</p>
+                    <p className="leading-[normal]">{t('subtitle')}</p>
                   </div>
                 </div>
 
@@ -109,14 +119,14 @@ const HowItWorks: React.FC = () => {
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-[#00ff00] rounded-full"></div>
                     <span className="font-['Inter:Medium',_sans-serif] font-medium text-[13px] text-black tracking-[-0.52px]">
-                      Existing agents: 2-5 weeks
+                      {t('existingAgents')}
                     </span>
                   </div>
                   <div className="h-4 w-px bg-[rgba(0,0,0,0.1)]"></div>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-[#2600FF] rounded-full"></div>
                     <span className="font-['Inter:Medium',_sans-serif] font-medium text-[13px] text-black tracking-[-0.52px]">
-                      Custom agents: 2+ months
+                      {t('customAgents')}
                     </span>
                   </div>
                 </div>
@@ -181,10 +191,10 @@ const HowItWorks: React.FC = () => {
             {/* Header Section */}
             <div className="content-stretch flex flex-col items-center justify-start w-full">
               <div className="font-['Inter:Regular',_sans-serif] font-normal leading-[normal] text-[40px] text-black tracking-[-1.6px] mb-4 text-center">
-                <p>Every Agent is Custom-Built</p>
+                <p>{t('title')}</p>
               </div>
               <div className="font-['Inter:Medium',_sans-serif] font-medium opacity-40 text-[15px] text-black tracking-[-0.6px] text-center max-w-[500px]">
-                <p className="leading-[normal]">Each AI agent is carefully designed and configured to match your specific business processes, data structures, and operational requirements. Our team works closely with you to ensure seamless integration with your existing workflows.</p>
+                <p className="leading-[normal]">{t('subtitle')}</p>
               </div>
             </div>
 
@@ -229,14 +239,14 @@ const HowItWorks: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-[#00ff00] rounded-full"></div>
                   <span className="font-['Inter:Medium',_sans-serif] font-medium text-[13px] text-black tracking-[-0.52px]">
-                    Existing agents: 2-5 weeks
+                    {t('existingAgents')}
                   </span>
                 </div>
                 <div className="h-4 w-px bg-[rgba(0,0,0,0.1)]"></div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-[#2600FF] rounded-full"></div>
                   <span className="font-['Inter:Medium',_sans-serif] font-medium text-[13px] text-black tracking-[-0.52px]">
-                    Custom agents: 2+ months
+                    {t('customAgents')}
                   </span>
                 </div>
               </div>
